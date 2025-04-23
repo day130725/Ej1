@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace Ej1
 {
@@ -59,7 +62,7 @@ namespace Ej1
             //de mayor a menor
             //ejemplo: 10,9,8....1
 
-            Console.WriteLine("Nùmero del 10 al 1");
+            /*Console.WriteLine("Nùmero del 10 al 1");
             for (int i=10; i>=1; i--)
             {
                 Console.WriteLine(i);
@@ -67,6 +70,35 @@ namespace Ej1
                 Console.WriteLine("");
             }
             Console.ReadLine(); 
+            */
+
+            //Indicar si un numero es perfecto,
+            //cuando la suma de sus divisores es
+            //igual al numero.
+            //Por ejemplo 6, tiene como divisores
+            //a 1,2 y 3, luego 1+2+3= 6
+          
+            int num;
+            int suma = 0;
+            Console.Write("Ingrese numero: ");
+            num = int.Parse(Console.ReadLine());
+
+            for(int x = 1; x < num; x++) 
+            {
+                //mod => %
+                if (num % x==0)
+                {
+                    suma = suma + x;
+                }
+            }
+            //Console.WriteLine("Suma: "+Suma");
+            if (num == suma) 
+            {
+                Console.WriteLine("Si es perfecto");
+            }else
+            {
+                Console.WriteLine("No es perfecto");
+            }
         }
     }
 }
